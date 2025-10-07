@@ -48,5 +48,5 @@ func (c *MyS3Client) UploadSingleObject(key string, reader io.Reader) {
 		log.Fatal(err)
 	}
 
-	log.Println("upload successed")
+	log.Println("S3へのアップロードが成功しました！")
 }
