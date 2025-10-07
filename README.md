@@ -11,14 +11,14 @@
 ```
 .
 ├── apiclient apiパッケージ/
-│   ├── BedrockClient.go Bedrock接続用パッケージ
-│   ├── DynamoDBClient.go DynamoDB接続用パッケージ
-│   ├── QiitaClient.go Qiita接続用パッケージ
-│   └── S3Client.go S3接続用パッケージ
+│   ├── BedrockClient.go Bedrock接続用クライアント
+│   ├── DynamoDBClient.go DynamoDB接続用クライアント
+│   ├── QiitaClient.go Qiita接続用クライアント
+│   └── S3Client.go S3接続用クライアント
 ├── article 記事パッケージ/
-│   └── Article.go
+│   └── Article.go 記事構造体
 ├── httpclient http接続用ヘルパーパッケージ/
-│   └── http.go 
+│   └── http.go
 ├── urlbuilder URL作成用ヘルパーパッケージ/
 │   └── url.go
 ├── go.mod
