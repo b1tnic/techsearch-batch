@@ -1,4 +1,4 @@
-# Qiita記事に自然言語ができるWebアプリ[techsearch](https://techserch.net/)のバッチ処理のソースレポジトリ
+# Qiita記事に自然言語ができるWebアプリ[techsearch](https://techserch.net/)のバッチ処理のソースレポジトリ(現在、Qiitaサポートチームに問い合わせ中の為公開を停止しております)
 
 ## 概要
 日次で深夜二時に実行され、Qiitaの前日投稿分の記事をS3とDynamoDBに保存
