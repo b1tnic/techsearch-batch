@@ -32,8 +32,8 @@ type QiitaArticle struct {
 
 /**
  * qiita記事を日付指定で取得するメソッド
- * @param 取得開始日、取得終了日、ページ数
- * @return httpレスポンス
+ * @param 取得開始日、取得終了日、何ページ目か、ページ数
+ * @return httpレスポンス、エラー
  */
 func (qc *QiitaClient) FetchArticles(dateFrom string, dateTo string, page string, perpage string) (*http.Response, error) {
 
@@ -67,6 +67,7 @@ func (qc *QiitaClient) FetchArticles(dateFrom string, dateTo string, page string
 
 /** QiitaAPIのレスポンスヘッダーから、最大ページ数を返却するメソッド
  *  @params Httpレスポンス、一ページ当たりの記事数
+ *  @return 最大ページ数
  */
 func (qc *QiitaClient) GetLastPageInDate(hr *http.Response, perpage string) int {
 	log.Printf("%w", hr.Header)
@@ -132,7 +133,7 @@ func mapQiitaArticleToArticle(qa *QiitaArticle) article.Article {
 
 /**
  * qiitaAPIに接続するクライアントを作成
- * @param url
+ * @return QiitaClient
  */
 func NewQiitaClient() *QiitaClient {
 

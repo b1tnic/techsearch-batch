@@ -31,6 +31,8 @@ func handler() {
 	FROM_DATE := time.Now().AddDate(0, 0, -1).Format("2006-01-02")
 	// 当日を指定
 	TO_DATE := time.Now().AddDate(0, 0, 0).Format("2006-01-02")
+
+	// 環境変数の取得
 	PAGE_SIZE := os.Getenv("PAGE_SIZE")
 	S3_BUCKETNAME := os.Getenv("S3_BUCKETNAME")
 	DYNAMODB_TABLENAME := os.Getenv("DYNAMODB_TABLENAME")

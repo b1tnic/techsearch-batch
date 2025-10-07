@@ -15,7 +15,7 @@ type MyDynamoDBClient struct {
 	client    *dynamodb.Client
 }
 
-/** DynamoDBにアップロードするメソッド
+/** DynamoDBに記事をアップロードするメソッド
  *  @params 記事
  */
 func (myClient MyDynamoDBClient) Upload(article article.Article) {
@@ -38,7 +38,8 @@ func (myClient MyDynamoDBClient) Upload(article article.Article) {
 }
 
 /** MyDynamoDBClientを返却するメソッド
- *  @params テーブル名
+ *  @params AWSコンフィグ、テーブル名
+ *  @return MyDynamoDBClient
  */
 func NewMyDynamoDBClient(cfg aws.Config, tableName string) *MyDynamoDBClient {
 	client := dynamodb.NewFromConfig(cfg)

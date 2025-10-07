@@ -23,8 +23,6 @@ func NewHttpConnecter() *HttpConnecter {
 }
 
 /** Getリクエストをセットするメソッド
- *  作成失敗時、エラーログを返却する。
- *
  *  @return エラー
  */
 func (hc *HttpConnecter) SetGetRequest() error {
@@ -37,7 +35,9 @@ func (hc *HttpConnecter) SetGetRequest() error {
 	return nil
 }
 
-// Httpクライアントをセットするメソッド
+/* Httpクライアントをセットするメソッド
+ * @params タイムアウト値(秒)
+ */
 func (hc *HttpConnecter) SetHttpClient(timeoutSec int) {
 	client := &http.Client{
 		Timeout: time.Duration(timeoutSec) * time.Second,

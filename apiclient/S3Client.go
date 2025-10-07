@@ -18,8 +18,8 @@ type MyS3Client struct {
 }
 
 /** S3クライアントを返却するメソッド
- *  @params AWSコンフィグ
- *  @return S3クライアント、バケット名
+ *  @params AWSコンフィグ、バケット名
+ *  @return MyS3Client
  */
 func NewMyS3Client(cfg aws.Config, bucketName string) *MyS3Client {
 	client := s3.NewFromConfig(cfg)
@@ -35,7 +35,7 @@ func NewMyS3Client(cfg aws.Config, bucketName string) *MyS3Client {
 }
 
 /** オブジェクトをアップロードするメソッド
- *  @params バケット名、キー、アップロードするオブジェクト
+ *  @params キー、アップロードするオブジェクト
  */
 func (c *MyS3Client) UploadSingleObject(key string, reader io.Reader) {
 	_, err := c.uploader.Upload(context.Background(), &s3.PutObjectInput{
